@@ -18,8 +18,12 @@ function App() {
           Learn React
         </a>
       </header>
+      <body>
+        <input></input>
+      </body>
     </div>
   );
 }
+
 
 export default App;
