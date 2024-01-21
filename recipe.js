@@ -1,22 +1,41 @@
+let ID_ARRAY = [];
+
 function main() {
-    let base_URL = "https://api.spoonacular.com/recipes/findByIngredients";
+    let base_URL = "https://api.spoonacular.com/recipes/findByIngredients"; //Search Recipes by Ingredients API
+    
+    let ingredient_input = document.getElementById("ingredients");
 
-    //By calling this, the HTML for title and picture of the recipe will be updated inside the html
-    //Also returns the ID of recipes
-    let ingredient_input = document.getElementById("");
-
-    ingredient_url(base_URL, ingredient_input.value) 
+    ingredient_url(base_URL) 
         .then(ingredient_ids => {
-            //handle ids here (make api calls)
+            ID_ARRAY = ingredient_ids;
         })
         .catch(error => {
             alert("Ids not found");
         })
 
-    
-    
+    let diet_array = getSelectedOptions(ID_ARRAY);
+    let recipe_data = search_recipes(ID_ARRAY,diet_array);
 }
 
+function getSelectedOptions() {
+    let selectElements = getElementsById("diet");
+    let selectValues = Array.from(selectElements.selectedOptions).map(option => option.value);
+    return selectValues;
+}
+
+//Function search recipes by ID -> dietary booleans, summary
+function search_recipes(ids,diet_array) {
+    let recipe_base_URL = "https://api.spoonacular.com/recipes/{id_data}/information?includeNutrition=false" //Search Recipes Informations
+
+    for (var i = 0; i < ids.length; i++) {
+        recipe_URL = recipe_base_URL.replace("{id_data", id[i]);
+        $.get(recipe_URL, function(data) {
+            //MAKE THE TITLE AND PICTURE FOR HTML HERE
+            
+        })
+    }
+   
+}
 function ingredient_url(url,input) {
     let base_URL = url + "?ingredients=";
 
@@ -35,9 +54,8 @@ function ingredients_json(url){
         $.get(url, function(data) {
             let ids = [];
             for (var i=0; i < data.length; i++) {
-                $("#EcoRecipeName${i}").html(data[i].title);
-                $("#EcoSuggestionPicture${i}").attr("src", data[i].image);
                 ids.push(data[i].id);
+
             }
             
             resolve(ids);
@@ -47,16 +65,7 @@ function ingredients_json(url){
     });
 }
 
-
-
-
-// function ingredients_json(url) {
-//     $.get(url, function(data){
-//         analyze(data);
-//     })      
-// }
-
-
 function convert_input_string(word) {
     return word.split(",");
 }
+
