@@ -15,6 +15,50 @@
     color: black;
 }
 
+#suggestions{
+    display:flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.left{
+    padding: 35px;
+    flex-grow:1;
+    text-align: left;
+}
+
+#suggestions select {
+    height: 30px;
+    font-size: 15px;
+    border-radius: 20px;
+    padding-left:15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    appearance: none; /* Removes default styling */
+    outline: none;
+    background-image: url('arrow.png'); 
+    background-repeat: no-repeat;
+    background-position: right 10px center; 
+    background-size: 15px;
+}
+
+#suggestions select:hover{
+    outline: 2px solid orange; 
+    
+    
+}
+
+.center{
+    flex-grow: 2;
+    text-align: center;
+    text-decoration: underline;
+    font-family:"Arial";
+}
+
+/*space for aligning text*/
+.spacer{
+    flex-grow:3.1;
+}
+
 #logo-text{
     font-size: 16px;
     font-weight: bolder;
@@ -24,13 +68,10 @@
 
 #logo{
     width: 52%;
-    height: 52%;
+    height: 55%;
 }
 
-/*#wrapper {
-    display:flex;
-    justify-content: space-around;
-}*/
+
 
 .container{
     display:flex;
@@ -41,15 +82,11 @@
     gap: 70px;
 }
 
-#recipesText{
-    display:flex;
-    justify-content: center;
-    font-family: Arial;
-}
+
 
 .image:hover img{
     opacity: 0.7;
-    outline: 2px solid rgb(255, 153, 0);
+    outline: 4px solid rgb(255, 153, 0);
     
 }
 
@@ -59,13 +96,16 @@
 
 .image:hover button {
     opacity: 1;
-    background: greenyellow;
+    background: rgb(255, 153, 0);
     
 }
 .Container button{
     opacity: 0;
     border: none;
-    transition: opacity 0.3s ease;
+    padding: 7px;
+    font-size: large;
+    border-radius: 20px;
+    transition: opacity 0.5s ease;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -75,7 +115,7 @@
 
 .container img{
     box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease;
 }
 
 .Container div p{
