@@ -10,6 +10,7 @@
     text-align: center;
 }
 
-.header h1 {
-    /* position: absolute; */
+.header a {
+    text-decoration: none;
+    color: black;
 }
