@@ -14,7 +14,7 @@ body {
     line-height: 1.6; /* Spacing between lines */
     padding: 20px; /* Padding around the body content */
 }
-#header {
+#header3 {
     height: 300px;
     background-image: url(healthy.jpg);
     background-attachment: fixed;
@@ -26,7 +26,7 @@ body {
     align-items: center;
     text-align: center;
 }
-#header a {
+#header3 a {
     text-decoration: none;
     color: black;
 }

@@ -10,120 +10,128 @@
     <!-- <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/> -->
 </head>
 <body>
-    <div class="header">
-        <div class="custom-select">
-            <a href="Home.html"><img src="logo.png" alt="logo"></a>
-            <p>Find the Most Eco-friendly Recipes for This Season.</p>
+    <div class="page1">
+        <div class="header">
+            <div class="custom-select">
+                <a href="Home.html"><img src="logo.png" alt="logo"></a>
+                <p>Find the Most Eco-friendly Recipes for This Season.</p>
+            
+                <select name="state" id="state">
+                    <option value="none" selected disabled>Select a State</option>
+                    <option value="none">Use My Loacation</option>
+                    <option value="alabama">Alabama</option>
+                    <option value="alaska">Alaska</option>
+                    <option value="arizona">Arizona</option>
+                    <option value="arkansas">Arkansas</option>
+                    <option value="northern-california">Northern California</option>
+                    <option value="southern-california">Southern California</option>
+                    <option value="colorado">Colorado</option>
+                    <option value="connecticut">Connecticut</option>
+                    <option value="delaware">Delaware</option>
+                    <option value="northern-florida">Northern Florida</option>
+                    <option value="southern-florida">Southern Florida</option>
+                    <option value="georgia">Georgia</option>
+                    <option value="hawaii">Hawaii</option>
+                    <option value="idaho">Idaho</option>
+                    <option value="illinois">Illinois</option>
+                    <option value="indiana">Indiana</option>
+                    <option value="iowa">Iowa</option>
+                    <option value="kansas">Kansas</option>
+                    <option value="kentucky">Kentucky</option>
+                    <option value="louisiana">Louisiana</option>
+                    <option value="maine">Maine</option>
+                    <option value="maryland">Maryland</option>
+                    <option value="massachusetts">Massachusetts</option>
+                    <option value="michigan">Michigan</option>
+                    <option value="minnesota">Minnesota</option>
+                    <option value="mississippi">Mississippi</option>
+                    <option value="missouri">Missouri</option>
+                    <option value="montana">Montana</option>
+                    <option value="nebraska">Nebraska</option>
+                    <option value="nevada">Nevada</option>
+                    <option value="newhampshire">New Hampshire</option>
+                    <option value="newjersey">New Jersey</option>
+                    <option value="newmexico">New Mexico</option>
+                    <option value="newyork">New York</option>
+                    <option value="northcarolina">North Carolina</option>
+                    <option value="northdakota">North Dakota</option>
+                    <option value="ohio">Ohio</option>
+                    <option value="oklahoma">Oklahoma</option>
+                    <option value="oregon">Oregon</option>
+                    <option value="pennsylvania">Pennsylvania</option>
+                    <option value="rhodeisland">Rhode Island</option>
+                    <option value="southcarolina">South Carolina</option>
+                    <option value="southdakota">South Dakota</option>
+                    <option value="tennessee">Tennessee</option>
+                    <option value="texas">Texas</option>
+                    <option value="utah">Utah</option>
+                    <option value="vermont">Vermont</option>
+                    <option value="virginia">Virginia</option>
+                    <option value="washington">Washington</option>
+                    <option value="westvirginia">West Virginia</option>
+                    <option value="wisconsin">Wisconsin</option>
+                    <option value="wyoming">Wyoming</option>
+                </select>
+                
+                <select name="month" id="month">
+                    <option value="none" selected>Any Month</option>
+                    <option value="none">Current Month Selection</option>
+                    <option value="early-january">Early January</option>
+                    <option value="late-january">Late January</option>
+                    <option value="early-february">Early February</option>
+                    <option value="late-february">Late February</option>
+                    <option value="early-march">Early March</option>
+                    <option value="late-march">Late March</option>
+                    <option value="early-april">Early April</option>
+                    <option value="late-april">Late April</option>
+                    <option value="early-may">Early May</option>
+                    <option value="late-may">Late May</option>
+                    <option value="early-june">Early June</option>
+                    <option value="late-june">Late June</option>
+                    <option value="early-july">Early July</option>
+                    <option value="late-july">Late July</option>
+                    <option value="early-august">Early August</option>
+                    <option value="late-august">Late August</option>
+                    <option value="early-september">Early September</option>
+                    <option value="late-september">Late September</option>
+                    <option value="early-october">Early October</option>
+                    <option value="late-october">Late October</option>
+                    <option value="early-november">Early November</option>
+                    <option value="late-november">Late November</option>
+                    <option value="early-december">Early December</option>
+                    <option value="late-december">Late December</option>
+                </select>
+                
+                <input type="input" placeholder="Input Ingredients" id="ingredients">
+
+                <select data-placeholder="Begin typing a name to diet..." multiple class="chosen-select" id ="diet" >
+                    <option value="vegetarian" selected>Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="glutenFree">Gluten-Free</option>
+                    <option value="dairyFree">Dairy-Free</option>
+                    <option value="ketogenic">Ketogenic</option>
+                </select> 
         
-            <select name="state" id="state">
-                <option value="none" selected disabled>Select a State</option>
-                <option value="none">Use My Loacation</option>
-                <option value="alabama">Alabama</option>
-                <option value="alaska">Alaska</option>
-                <option value="arizona">Arizona</option>
-                <option value="arkansas">Arkansas</option>
-                <option value="northern-california">Northern California</option>
-                <option value="southern-california">Southern California</option>
-                <option value="colorado">Colorado</option>
-                <option value="connecticut">Connecticut</option>
-                <option value="delaware">Delaware</option>
-                <option value="northern-florida">Northern Florida</option>
-                <option value="southern-florida">Southern Florida</option>
-                <option value="georgia">Georgia</option>
-                <option value="hawaii">Hawaii</option>
-                <option value="idaho">Idaho</option>
-                <option value="illinois">Illinois</option>
-                <option value="indiana">Indiana</option>
-                <option value="iowa">Iowa</option>
-                <option value="kansas">Kansas</option>
-                <option value="kentucky">Kentucky</option>
-                <option value="louisiana">Louisiana</option>
-                <option value="maine">Maine</option>
-                <option value="maryland">Maryland</option>
-                <option value="massachusetts">Massachusetts</option>
-                <option value="michigan">Michigan</option>
-                <option value="minnesota">Minnesota</option>
-                <option value="mississippi">Mississippi</option>
-                <option value="missouri">Missouri</option>
-                <option value="montana">Montana</option>
-                <option value="nebraska">Nebraska</option>
-                <option value="nevada">Nevada</option>
-                <option value="newhampshire">New Hampshire</option>
-                <option value="newjersey">New Jersey</option>
-                <option value="newmexico">New Mexico</option>
-                <option value="newyork">New York</option>
-                <option value="northcarolina">North Carolina</option>
-                <option value="northdakota">North Dakota</option>
-                <option value="ohio">Ohio</option>
-                <option value="oklahoma">Oklahoma</option>
-                <option value="oregon">Oregon</option>
-                <option value="pennsylvania">Pennsylvania</option>
-                <option value="rhodeisland">Rhode Island</option>
-                <option value="southcarolina">South Carolina</option>
-                <option value="southdakota">South Dakota</option>
-                <option value="tennessee">Tennessee</option>
-                <option value="texas">Texas</option>
-                <option value="utah">Utah</option>
-                <option value="vermont">Vermont</option>
-                <option value="virginia">Virginia</option>
-                <option value="washington">Washington</option>
-                <option value="westvirginia">West Virginia</option>
-                <option value="wisconsin">Wisconsin</option>
-                <option value="wyoming">Wyoming</option>
-            </select>
-            
-            <select name="month" id="month">
-                <option value="none" selected>Any Month</option>
-                <option value="none">Current Month Selection</option>
-                <option value="early-january">Early January</option>
-                <option value="late-january">Late January</option>
-                <option value="early-february">Early February</option>
-                <option value="late-february">Late February</option>
-                <option value="early-march">Early March</option>
-                <option value="late-march">Late March</option>
-                <option value="early-april">Early April</option>
-                <option value="late-april">Late April</option>
-                <option value="early-may">Early May</option>
-                <option value="late-may">Late May</option>
-                <option value="early-june">Early June</option>
-                <option value="late-june">Late June</option>
-                <option value="early-july">Early July</option>
-                <option value="late-july">Late July</option>
-                <option value="early-august">Early August</option>
-                <option value="late-august">Late August</option>
-                <option value="early-september">Early September</option>
-                <option value="late-september">Late September</option>
-                <option value="early-october">Early October</option>
-                <option value="late-october">Late October</option>
-                <option value="early-november">Early November</option>
-                <option value="late-november">Late November</option>
-                <option value="early-december">Early December</option>
-                <option value="late-december">Late December</option>
-            </select>
-            
-            <input type="input" placeholder="Input Ingredients" id="ingredients">
-
-            <select data-placeholder="Begin typing a name to diet..." multiple class="chosen-select" id ="diet" >
-                <option value="none" selected>None</option>
-                <option value="vegetarian">Vegetarian</option>
-                <option value="vegan">Vegan</option>
-                <option value="glutenFree">Gluten-Free</option>
-                <option value="dairyFree">Dairy-Free</option>
-                <option value="ketogenic">Ketogenic</option>
-            </select> 
-     
-            <button onclick=loadCard() id="search">Search</button>  
+                <button onclick=loadCard() id="search">Search</button>  
+            </div>
         </div>
+        <script>
+            $(document).ready(function() {
+            $(".chosen-select").chosen({
+                no_results_text: "Oops, nothing found!"
+            });
+            });
+        </script>
     </div>
-    <script>
-        $(document).ready(function() {
-          $(".chosen-select").chosen({
-            no_results_text: "Oops, nothing found!"
-          });
-        });
-    </script>
-
     <div class="page2">
+        <div id="header2">
+            <div>
+            <br><br>
+            <a href="Home.html"><img id="logo" src="logo.png" alt="logo"></a>
+            <p id="logo-text">Find the most eco-friendly recipes at the moment.</p>
+            </div>
+        </div>
+        <br><br>
         <div id="suggestions">
             <div class="left">
             Filter: <select name="dropdown" size="1", id="category">
@@ -283,26 +291,36 @@
             
         </div>  
     </div>
-    <div class= "description">
-        <img id="EcoSuggestionPicture">
+    <div class= "page3">
+        <div id="header3">
+            <div>
+            <br><br>
+            <a href="Home.html"><img id="logo" src="logo.png" alt="logo"></a>
+            <p id="logo-text">Find the most eco-friendly recipes at the moment.</p>
+            </div>
+        </div>
+        <br><br>
+        <div class= "description">
+            <img id="EcoSuggestionPicture">
+            
+            <div id="recipeTitle"></div>
+            <div class="tables">
+            <table>
+            <tr><td class = firstRow>Calories:</td><td class = secondRow id="calories"></td></tr>
+            <tr><td class = firstRow>Fat:</td><td class = secondRow id="fat"></td></tr>
+            <tr><td class = firstRow>Protein:</td><td class = secondRow id="protein"></td></tr>
+            <tr><td class = firstRow>Carbohydrates:</td><td class = secondRow id="carbohydrates"></td></tr>
+            </table>
+            <table id="ingredientsTable">
+            <tr>
+                <th colspan="3">Ingredients</th>
+            </tr>
+            <tr>
+                <th>Name</th><th>Amount</th><th>Price</th>
+            </tr>
         
-        <div id="recipeTitle"></div>
-        <div class="tables">
-        <table>
-        <tr><td class = firstRow>Calories:</td><td class = secondRow id="calories"></td></tr>
-        <tr><td class = firstRow>Fat:</td><td class = secondRow id="fat"></td></tr>
-        <tr><td class = firstRow>Protein:</td><td class = secondRow id="protein"></td></tr>
-        <tr><td class = firstRow>Carbohydrates:</td><td class = secondRow id="carbohydrates"></td></tr>
-        </table>
-        <table id="ingredientsTable">
-        <tr>
-            <th colspan="3">Ingredients</th>
-        </tr>
-        <tr>
-            <th>Name</th><th>Amount</th><th>Price</th>
-        </tr>
-    
-        </table>
-    </div>    
+            </table>
+        </div>   
+    </div> 
 </body>
 </html>

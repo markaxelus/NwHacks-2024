@@ -1,5 +1,5 @@
 let ID_ARRAY = [];
-let apikey = "apiKey=5a1eb6775112410f90aa898fe292a09e"
+let apikey = "apiKey=0c3a68e53e61402eb2d3396b7e348f2b"
 
 async function loadCard() {
     let base_URL = "https://api.spoonacular.com/recipes/findByIngredients?" + apikey; //Search Recipes by Ingredients API
@@ -10,6 +10,7 @@ async function loadCard() {
     console.log(id_array);
     let diet_array = getSelectedOptions();
     await search_recipes(id_array,diet_array);
+    $(".page1").hide();
     $(".page2").show();
 }
 
