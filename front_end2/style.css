@@ -1,6 +1,6 @@
 .header {
     
-    height: 1000px;
+    height: 800px;
     background-image: url(healthy.jpg);
     background-repeat: no-repeat;
 	background-size: 120%; 
@@ -10,7 +10,7 @@
     align-items: center;
     text-align: center;
     color: #043428;
-    font-size: 40px;
+    font-size: 37px;
     font-weight: bolder;
 }
 
