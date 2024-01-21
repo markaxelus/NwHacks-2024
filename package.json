@@ -1,13 +1,14 @@
 {
   "dependencies": {
+    "expres": "^0.0.5",
     "mongodb": "^6.3.0",
     "node-fetch": "^3.3.2",
-    "node.js": "^0.0.1-security"
+    "node.js": "^0.0.1-security",
+    "nodemon": "^3.0.3"
   },
   "name": "nwhacks-2024",
   "version": "1.0.0",
   "main": "recipes.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
