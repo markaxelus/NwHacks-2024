@@ -15,6 +15,7 @@ function main() {
 
     let diet_array = getSelectedOptions(ID_ARRAY);
     let recipe_data = search_recipes(ID_ARRAY,diet_array);
+    // WHAT TO DO HERE NOW?
 }
 
 
@@ -30,25 +31,49 @@ function search_recipes(ids,diet_array) {
     let recipe_base_URL = "https://api.spoonacular.com/recipes/{id_data}/information?includeNutrition=false" //Search Recipes Informations
 
     for (var i = 0; i < ids.length; i++) {
-        recipe_URL = recipe_base_URL.replace("{id_data", ids[i]);
+        recipe_URL = recipe_base_URL.replace("{id_data}", ids[i]);
         $.get(recipe_URL, function(data) {
             for (let item of diet_array){
                 if (data[item] === true) {
                     //THEN WE WANT TO DISPLAY THE TITLE AND PRICE AND SUMMARY AND PICTURE\
-                    // MAKE 2 function calls here
                     priceBreakdownMetrics(data.id);
+                    getNutrients(data.id);
                 }
             }
         })
     }
 }
+
+function getNutrients(id) {
+    let nutrient_base_URL = "https://api.spoonacular.com/recipes/{id_data}/nutritionWidget.json";
+    let nutrient_URL = nutrient_base_URL.replace("{id_data}", id);
+    $.get(recipe_URL, function(data) {
+        for (let items of data.nutrients) {
+            if (items.name === "Calories"){
+                let calories = items.amount + '' + items.unit;
+            }
+            else if (items.name === "Fat"){
+                let fat = items.amount + '' + items.unit; 
+            }
+            else if (items.name === "Protein"){
+                let protein = items.amount + '' + items.unit;
+            }
+            else if (items.name === "Carbohydrates"){
+                let carbohydrates = items.amount + '' + items.unit;
+            }
+        }
+
+        //Pouria needs to combine this with the JQuery stuff
+    });
+}
+
 // Function takes in individual ids, NOT AN ARRAY OF IDS ! ! ! !
 function priceBreakdownMetrics(id) {
     let price_base_URL = "https://api.spoonacular.com/recipes/{id_data}/priceBreakdownWidget.json"
-    let price_URL = price_base_URL.replace("{id_data", id);
+    let price_URL = price_base_URL.replace("{id_data}", id);
 
     $.get(price_URL, function(data){
-        for (let items of  data.ingredients){
+        for (let items of data.ingredients){
             let metricUnit = items.amount.metric.unit; //Gets u the metrix UNIT 'g'
             let valueUnit = items.amount.metric.value; //Gets u the metrix VALUE '1.5'
             let price = items.price; //Gets u the price
