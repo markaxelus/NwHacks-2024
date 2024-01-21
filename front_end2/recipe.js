@@ -32,22 +32,20 @@ function getSelectedOptions() {
 function search_recipes(ids_array,diet_array) {
     console.log("searching...") //Search Recipes Informations
     console.log(ids_array)
-    // for (var i = 0; i < ids_array.length; i++) {
-    //     fetch(`https://api.spoonacular.com/recipes/${ids_array[i]}/information?${apikey}&includeNutrition=false`, {
-    //         method: "GET"
-    //     })
-    //     .then(data => {
-    //         console.log(data)
-    //     })
-    //     .catch(err => console.log(err))
-    // }
-    fetch(`https://api.spoonacular.com/recipes/${ids_array[0]}/information?${apikey}&includeNutrition=false`, {
-            method: "GET"
+    for (var i = 0; i < ids_array.length; i++) {
+        let url = `https://api.spoonacular.com/recipes/${ids_array[i]}/information?${apikey}&includeNutrition=false`
+        $.get(url, function(data) {
+            for (let items of diet_array) {
+                if (data[items] === true){
+                    
+                }
+            }
+
         })
-        .then(data => {
-            console.log(data)
+    }
+    $.get(`https://api.spoonacular.com/recipes/${ids_array[0]}/information?${apikey}&includeNutrition=false`, function(data) {
+            console.log(data);
         })
-        .catch(err => console.log(err))
 }
 
 function getNutrients(id) {
