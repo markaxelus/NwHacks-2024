@@ -5,10 +5,11 @@ let month = document.getElementById("month").value;
 let full_url = base_URL + state + "/" + month;
 var elements = [];
 
-
 async function scraper() {
   let driver = await new Builder().forBrowser("chrome").build();
   await driver.get(full_url);
   elements = await driver.findElements(By.className("card_title"));
+  await driver.quit();
+
 }
-scraper()
+scraper();
