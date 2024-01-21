@@ -13,8 +13,9 @@
         <p>Find the Most Eco-friendly Recipes for This Season.</p>
         </div>
         
-        <div class="search" onclick="search()">
-        <select name="state">
+        <!-- <div class="search" onclick="search()"> -->
+        <!-- <form id="recipeForm"> -->
+        <select name="state" id="state">
             <option value="none" selected disabled>State</option>
             <option value="alabama">Alabama</option>
             <option value="alaska">Alaska</option>
@@ -68,22 +69,22 @@
             <option value="wyoming">Wyoming</option>
           </select>
            
-          <select name="month">
+          <select name="month" id="month">
             <option value="none" selected disabled>Month</option>
-            <option value="01">January</option>
-            <option value="02">February</option>
-            <option value="03">March</option>
-            <option value="04">April</option>
-            <option value="05">May</option>
-            <option value="06">June</option>
-            <option value="07">July</option>
-            <option value="08">August</option>
-            <option value="09">September</option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
             <option value="10">October</option>
             <option value="11">November</option>
             <option value="12">December</option>
           </select> 
-          <select name="dietaryRestrictions">
+          <select name="dietaryRestrictions" id = diet>
             <option value="none" selected disabled>Dietary Restrictions</option>
             <option value="vegetarian">Vegetarian</option>
             <option value="vegan">Vegan</option>
@@ -103,8 +104,9 @@
             <option value="whole30">Whole30</option>
           </select>
           
-        <button onclick=submit()>Search</button>
-        </div>
+        <button onclick=search() id="search">Search</button>
+        <!-- </form> -->
+        <!-- </div> -->
         </div>
     </div>
     
