@@ -1,6 +1,6 @@
 function search() {
-    console.log("click");
-    // window.location.href = 'Results.html';
+    //console.log("click");
+    window.location.href = 'Results.html';
 }
 
 // function submit() {
