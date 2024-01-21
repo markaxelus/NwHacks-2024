@@ -2,6 +2,7 @@
 <head>
     <title>EcoEats</title>
     <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="ResultsStyle.css" type="text/css" rel="stylesheet">
     <script src="recipe.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
@@ -119,6 +120,187 @@
           });
         });
     </script>
+
+    <div class="page2">
+        <div id="suggestions">
+            <div class="left">
+            Filter: <select name="dropdown" size="1">
+                <option value="all" selected>All</option>
+                <option value="eco">Eco-friendly</option>
+                <option value="general">General Suggestions</option>
+            </select>
+            </div>
+            <div class="center">
+                <h1 id = recipesText>Suggested Recipes</h1>
+            </div>
+            <div class="spacer">
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div>
+            <div class = "image">
+                <img src="Steak.jpg">
+                <button>View Recipe</button>
+            </div>
+            <p>Omlette</p>
+            </div>
+            <div>
+            <div class = "image">
+                <img src="Steak.jpg">
+                <button>View Recipe</button>
+            </div>
+            <p>Omlette</p>
+            </div>
+            <div>
+            <div class = "image">
+                <img src="Steak.jpg">
+                <button>View Recipe</button>
+            </div>
+            <p>Omlette</p>
+            </div>
+            <div>
+            <div class = "image">
+                <img src="Steak.jpg">
+                <button>View Recipe</button>
+            </div>
+            <p>Omlette</p>
+            </div>
+            <div> 
+            <div class = "image">
+                <img src="Steak.jpg">
+                <button>View Recipe</button>
+            </div>
+            <p>Omlette</p>
+            </div>
+            <div>
+            <div class = "image">
+                <img src="Steak.jpg">
+                <button>View Recipe</button>
+            </div>
+            <p>Omlette</p>
+            </div>
+            <div>
+                <div class = "image">
+                    <img src="Steak.jpg">
+                    <button>View Recipe</button>
+                </div>
+                <p>Omlette</p>
+            </div>
+            <div>
+                <div class = "image">
+                <img src="Steak.jpg">
+                    <button>View Recipe</button>
+                </div>
+                <p>Omlette</p>
+            </div>
+            <div>
+                <div class = "image">
+                    <img src="Steak.jpg">
+                    <button>View Recipe</button>
+                </div>
+                <p>Omlette</p>
+            </div>
+            <div>
+                <div class = "image">
+                    <img src="Steak.jpg">
+                    <button>View Recipe</button>
+                </div>
+                <p>Omlette</p>
+            </div>
+            <div>
+                <div class = "image">
+                    <img src="Steak.jpg">
+                    <button>View Recipe</button>
+                </div>
+                <p>Omlette</p>
+                </div>
+            <div>
+                <div class = "image">
+                    <img src="Steak.jpg">
+                    <button>View Recipe</button>
+                </div>
+                <p>Omlette</p>
+            </div>
+            <div>
+                <div class = "image">
+                    <img src="Steak.jpg">
+                    <button>View Recipe</button>
+                </div>
+                <p>Omlette</p>
+            </div>
+            <div>
+                <div class = "image">
+                    <img src="Steak.jpg">
+                    <button>View Recipe</button>
+                </div>
+                <p>Omlette</p>
+            </div>
+            <div> 
+                <div class = "image">
+                    <img src="Steak.jpg">
+                    <button>View Recipe</button>
+                </div>
+                <p>Omlette</p>
+            </div>
+            <div>
+                <div class = "image">
+                    <img src="Steak.jpg">
+                    <button>View Recipe</button>
+                </div>
+                <p>Omlette</p>
+            </div>
+                <div>
+                    <div class = "image">
+                        <img src="Steak.jpg">
+                        <button>View Recipe</button>
+                    </div>
+                    <p>Omlette</p>
+            </div>
+                <div>
+                    <div class = "image">
+                        <img src="Steak.jpg">
+                        <button>View Recipe</button>
+                    </div>
+                    <p>Omlette</p>
+            </div>
+            <div>
+                    <div class = "image">
+                        <img src="Steak.jpg">
+                        <button>View Recipe</button>
+                    </div>
+                    <p>Omlette</p>
+            </div>
+            <div>
+                    <div class = "image">
+                        <img src="Steak.jpg">
+                        <button>View Recipe</button>
+                    </div>
+                    <p>Omlette</p>
+            </div>
+            
+        </div>
+    </div>
+    <div class= "description">
+        <img id="EcoSuggestionPicture" src="Chicken.jpg">
+        
+        <div id="recipeTitle">Hungry</div>
+        <div class="tables">
+        <table>
+        <tr><td class = firstRow>Calories:</td><td class = secondRow id="calories"></td></tr>
+        <tr><td class = firstRow>Fat:</td><td class = secondRow id="fat"></td></tr>
+        <tr><td class = firstRow>Protein:</td><td class = secondRow id="protein"></td></tr>
+        <tr><td class = firstRow>Carbohydrates:</td><td class = secondRow id="carbohydrates"></td></tr>
+        </table>
+        <table id="ingredientsTable">
+        <tr>
+            <th colspan="3">Ingredients</th>
+        </tr>
+        <tr>
+            <th>Name</th><th>Amount</th><th>Price</th>
+        </tr>
     
+        </table>
+    </div>    
 </body>
 </html>
