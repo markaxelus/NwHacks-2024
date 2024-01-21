@@ -1,0 +1,97 @@
+
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif; 
+    background-color: #f4f4f4; /* Light background for contrast */
+    color: #333; /* Dark text for readability */
+    line-height: 1.6; /* Spacing between lines */
+    padding: 20px; /* Padding around the body content */
+}
+#header {
+    height: 300px;
+    background-image: url(healthy.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+	background-size: 100%; 
+    background-position-y:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#header a {
+    text-decoration: none;
+    color: black;
+}
+
+#logo-text{
+    font-size: 17px;
+    font-weight: bolder;
+    
+    color: #043428;
+}
+
+#logo{
+    width: 55%;
+    height: 55%;
+}
+
+.description {
+    max-width: 500px; /* Limit the width for better readability */
+    margin: auto; /* Center the content */
+    background: white; /* White background for the main content area */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.description img {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space below the image */
+}
+
+.tables {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%; /* Full width of the container */
+    border-collapse: collapse; /* Collapsed borders for a clean look */
+    margin-bottom: 20px; /* Space below each table */
+}
+
+table th {
+    text-align: center; /* Align text to the left */
+    padding: 8px; /* Padding inside cells */
+    border-bottom: 1px solid #ddd;
+}
+table td {
+    text-align: left; /* Align text to the left */
+    padding: 8px; /* Padding inside cells */
+    border-bottom: 1px solid #ddd; /* Light border for each cell */
+}
+
+table th {
+    background-color: #f8f8f8; /* Slightly different background for headers */
+    font-weight: normal; /* Normal font-weight for a modern look */
+}
+
+.firstRow, .secondRow {
+    text-align: left; /* Align text to the left in rows */
+}
+
+#recipeTitle {
+    font-size: 24px; /* Larger font size for the title */
+    font-weight: bold; /* Bold font-weight for the title */
+    margin-bottom: 10px; /* Space below the title */
+    text-align: center;
+}
+
+/* Add any additional styling as needed */
