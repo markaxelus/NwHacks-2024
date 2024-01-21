@@ -17,24 +17,27 @@ function main() {
     let recipe_data = search_recipes(ID_ARRAY,diet_array);
 }
 
+//Function that returns the option based on the user input, not ALL DROPDOWNS
 function getSelectedOptions() {
     let selectElements = getElementsById("diet");
     let selectValues = Array.from(selectElements.selectedOptions).map(option => option.value);
     return selectValues;
 }
 
-//Function search recipes by ID -> dietary booleans, summary
+//Function search recipes by ID -> dietary booleans, summary, price, picture, title
 function search_recipes(ids,diet_array) {
     let recipe_base_URL = "https://api.spoonacular.com/recipes/{id_data}/information?includeNutrition=false" //Search Recipes Informations
 
     for (var i = 0; i < ids.length; i++) {
         recipe_URL = recipe_base_URL.replace("{id_data", id[i]);
         $.get(recipe_URL, function(data) {
-            //MAKE THE TITLE AND PICTURE FOR HTML HERE
-            
+            for (var item in diet_array){
+                if (data.item in data == true) {
+                    //THEN WE WANT TO DISPLAY THE TITLE AND PRICE AND SUMMARY AND PICTURE\
+                }
+            }
         })
     }
-   
 }
 function ingredient_url(url,input) {
     let base_URL = url + "?ingredients=";
@@ -49,6 +52,7 @@ function ingredient_url(url,input) {
     return ingredients_json(full_URL);
 }
 
+//Returns the data of the data URL searched by the user and then obtains the ID of that particular recipe
 function ingredients_json(url){
     return new Promise((resolve, reject) => {
         $.get(url, function(data) {
