@@ -26,12 +26,16 @@
 // app.listen(port, () => {
 //     console.log(`Server is running on http://localhost:${port}`);
 // });
-const http = require("node:http");
-const server = http.createServer((req,res) => {
-    res.writeHead(200);
-    res.end("test");
+const express = require('express');
+const PORT = 3000;
+const app = express();
+
+app.get('/test',(req,res) => {
+    res.json({ok:true});
 });
 
-server.listen(3000, () => {
-    console.log("Server on P3000")
+app.get('', (req,res) => {
+    res.json("testing");
 });
+
+app.listen(PORT, () => console.log(`Server is now listening on port ${PORT}`));
