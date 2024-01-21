@@ -92,7 +92,7 @@ async function priceBreakdownMetrics(id) {
             let metricUnit = items.amount.metric.unit; //Gets u the metrix UNIT 'g'
             let valueUnit = items.amount.metric.value; //Gets u the metrix VALUE '1.5'
             let price = items.price; //Gets u the price
-            let ingredient = "<th>" + name + "</th><th>" + valueUnit + " " + metricUnit + "</th><th>" + price + "</th>"
+            let ingredient = "<tr><td>" + name + "</td><td>" + valueUnit + " " + metricUnit + "</td><td>" + price + "</td></tr>"
             $("#ingredientsTable").append(ingredient);
         }
     })
