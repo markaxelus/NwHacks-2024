@@ -1,0 +1,11 @@
+.header {
+    list-style: none;
+	padding: 60px;
+    padding-left: 60%;
+    padding-right: 0px;
+	background-color: green;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+    
+}
