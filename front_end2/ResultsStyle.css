@@ -31,10 +31,19 @@
     justify-content: space-around;
 }
 
+#EcoSuggestionPicture{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 #EcoSuggestionPicture:hover{
     opacity: 0.5;
 }
 
+#OtherSuggestionPicture{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 #OtherSuggestionPicture:hover{
     opacity: 0.5;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
