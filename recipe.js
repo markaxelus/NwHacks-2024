@@ -5,7 +5,7 @@ function main() {
     
     let ingredient_input = document.getElementById("ingredients");
 
-    ingredient_url(base_URL) 
+    ingredient_url(base_URL, ingredient_input) 
         .then(ingredient_ids => {
             ID_ARRAY = ingredient_ids;
         })
@@ -36,6 +36,7 @@ function search_recipes(ids,diet_array) {
             for (let item of diet_array){
                 if (data[item] === true) {
                     //THEN WE WANT TO DISPLAY THE TITLE AND PRICE AND SUMMARY AND PICTURE\
+                    displayResults(data)
                     priceBreakdownMetrics(data.id);
                     getNutrients(data.id);
                 }
@@ -78,9 +79,18 @@ function priceBreakdownMetrics(id) {
             let valueUnit = items.amount.metric.value; //Gets u the metrix VALUE '1.5'
             let price = items.price; //Gets u the price
             //Pouria needs to combine this with the JQuery stuff
+            displayResults()
+
         }
     })
         
+}
+
+function displayResults(data) {
+    let image = "<img src=" + data.image + ">";
+    let title = "<p>" + data.title +  "</p>";
+    $(".container").append(image);
+    $(".container").append(title);
 }
 
 function ingredient_url(url,input) {
