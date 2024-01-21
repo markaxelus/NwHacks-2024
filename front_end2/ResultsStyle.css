@@ -15,7 +15,26 @@
     color: black;
 }
 
+#logo-text{
+    font-size: 17px;
+    font-weight: bolder;
+    color: #043428;
+}
+
+#logo{
+    width: 55%;
+    height: 55%;
+}
+
 #wrapper {
     display:flex;
     justify-content: space-around;
+}
+
+#EcoSuggestionPicture:hover{
+    opacity: 0.5;
+}
+
+#OtherSuggestionPicture:hover{
+    opacity: 0.5;
 }
