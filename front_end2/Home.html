@@ -6,12 +6,12 @@
 </head>
 <body>
     <div class="header">
+        <div>
+        <br><br>
         <h1>EcoEats</h1>
-        <a class="active" href="Home.html">Home</a>
-        <a href="Results.html">Results</a>
-    </div>
-    <div class="search_inputs">
-        <button onclick="Reset()" id="home">Home</button>
+        <p>Find the most eco-friendly recipes at the moment.</p>
+        
+
         <select name="state">
             <option value="none" selected disabled>State</option>
             <option value="alabama">Alabama</option>
@@ -81,9 +81,30 @@
             <option value="11">November</option>
             <option value="12">December</option>
           </select> 
+          <select name="dietaryRestrictions">
+            <option value="none" selected disabled>Dietary Restrictions</option>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="vegan">Vegan</option>
+            <option value="glutenFree">Gluten-Free</option>
+            <option value="dairyFree">Dairy-Free</option>
+            <option value="nutFree">Nut-Free</option>
+            <option value="pescatarian">Pescatarian</option>
+            <option value="halal">Halal</option>
+            <option value="kosher">Kosher</option>
+            <option value="lowCarb">Low Carb</option>
+            <option value="lowFat">Low Fat</option>
+            <option value="lowSugar">Low Sugar</option>
+            <option value="organic">Organic</option>
+            <option value="raw">Raw</option>
+            <option value="paleo">Paleo</option>
+            <option value="flexitarian">Flexitarian</option>
+            <option value="whole30">Whole30</option>
+          </select>
+          
         <button onclick=submit()>Search</button>
-    <div>
-
+        </div>
     </div>
+   
+    
 </body>
 </html>

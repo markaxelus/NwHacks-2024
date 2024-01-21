@@ -1,11 +1,15 @@
 .header {
-    list-style: none;
-	padding: 60px;
-    padding-left: 60%;
-    padding-right: 0px;
-	background-color: green;
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-evenly;
-    
+    height: 1000px;
+    background-image: url(healthy.jpg);
+    background-repeat: no-repeat;
+	background-size: 100%; 
+    background-position-y:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.header h1 {
+    /* position: absolute; */
 }
