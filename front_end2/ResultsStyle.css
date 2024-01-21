@@ -15,6 +15,38 @@
     color: black;
 }
 
+#suggestions{
+    display:flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.left{
+    padding: 35px;
+    flex-grow:1;
+    text-align: left;
+}
+
+#suggestions select{
+    height: 25px;
+    font-size: 15px;
+    border-radius: 20px;
+    padding-left:5px;
+}
+
+#suggestions select:hover{
+    outline: 2px solid orange;
+    border-radius: 20px;
+}
+
+.center{
+    flex-grow: 2;
+    text-align: center;
+}
+.spacer{
+    flex-grow:2.95;
+}
+
 #logo-text{
     font-size: 16px;
     font-weight: bolder;
@@ -41,11 +73,11 @@
     gap: 70px;
 }
 
-#recipesText{
+/* #recipesText{
     display:flex;
     justify-content: center;
     font-family: Arial;
-}
+} */
 
 .image:hover img{
     opacity: 0.7;
