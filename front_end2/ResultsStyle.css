@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(77, 210, 11);
+}
+
+#wrapper{
+    display:flex;
+    justify-content: space-around;
+}
+
+#EcoHeader {
+
+}
+  
+#OtherHeader {
+
+}
