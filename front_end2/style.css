@@ -9,12 +9,18 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: #043428;
+    font-size: 40px;
+    font-weight: bolder;
 }
 
-.header a {
+.header img {
+    margin: 0%;
+}
+/* .header a {
     text-decoration: none;
     color: black;
-}
+} */
 
 select {
     /* background-color: rgba(245, 245, 245, 0.361); */
