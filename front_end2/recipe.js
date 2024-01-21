@@ -1,5 +1,5 @@
 let ID_ARRAY = [];
-let apikey = "apiKey=5f141369b0d84ef39439aca40b3b7aa1"
+let apikey = "apiKey=5a1eb6775112410f90aa898fe292a09e"
 
 async function loadCard() {
     let base_URL = "https://api.spoonacular.com/recipes/findByIngredients?" + apikey; //Search Recipes by Ingredients API
@@ -9,15 +9,36 @@ async function loadCard() {
     let id_array = await ingredient_url(base_URL, ingredient_input) 
     console.log(id_array);
     let diet_array = getSelectedOptions();
-    search_recipes(id_array,diet_array);
-    // window.location.href = 'Results.html';
+    await search_recipes(id_array,diet_array);
+    $(".page2").show();
 }
 
-function loadDescription(id) {
+
+//Function search recipes by ID -> dietary booleans, summary, price, picture, title
+async function search_recipes(ids_array,diet_array) {
+    
+    for (var i = 0; i < ids_array.length; i++) {
+        let url = `https://api.spoonacular.com/recipes/${ids_array[i]}/information?${apikey}&includeNutrition=false`
+        $.get(url, function(data) {
+            for (let items of diet_array) {
+                if (data[items] === true){
+                    displayResults(data);
+                }
+            }
+
+        })
+    }
+}
+
+async function loadDescription(id, title, image) {
     let recipe_base_URL = "https://api.spoonacular.com/recipes/{id_data}/information?" + apikey + "&includeNutrition=false" //Search Recipes Informations
 
-    priceBreakdownMetrics(id);
-    getNutrients(id);
+    await priceBreakdownMetrics(id);
+    await getNutrients(id);
+    $("#EcoSuggestionPicture").attr("src", image);
+    $("#recipeTitle").text(title);
+    $(".page2").hide();
+    $(".description").show();
 }
 
 
@@ -28,27 +49,8 @@ function getSelectedOptions() {
     return selectValues;
 }
 
-//Function search recipes by ID -> dietary booleans, summary, price, picture, title
-function search_recipes(ids_array,diet_array) {
-    console.log("searching...") //Search Recipes Informations
-    console.log(ids_array)
-    for (var i = 0; i < ids_array.length; i++) {
-        let url = `https://api.spoonacular.com/recipes/${ids_array[i]}/information?${apikey}&includeNutrition=false`
-        $.get(url, function(data) {
-            for (let items of diet_array) {
-                if (data[items] === true){
-                    
-                }
-            }
 
-        })
-    }
-    $.get(`https://api.spoonacular.com/recipes/${ids_array[0]}/information?${apikey}&includeNutrition=false`, function(data) {
-            console.log(data);
-        })
-}
-
-function getNutrients(id) {
+async function getNutrients(id) {
     let nutrient_base_URL = "https://api.spoonacular.com/recipes/{id_data}/nutritionWidget.json?" + apikey;
     let nutrient_URL = nutrient_base_URL.replace("{id_data}", id);                
     let calories = '';
@@ -80,7 +82,7 @@ function getNutrients(id) {
 }
 
 // Function takes in individual ids, NOT AN ARRAY OF IDS ! ! ! !
-function priceBreakdownMetrics(id) {
+async function priceBreakdownMetrics(id) {
     let price_base_URL = "https://api.spoonacular.com/recipes/{id_data}/priceBreakdownWidget.json?" + apikey
     let price_URL = price_base_URL.replace("{id_data}", id);
 
@@ -97,14 +99,13 @@ function priceBreakdownMetrics(id) {
         
 }
 
-function displayResults(data) {
-    
-    let card = '<div class = "image"><img onclick=loadDescription(' + data.id + ') src=' + data.image + '><button onclick=loadDescription(' + data.id + ')>View Recipe</button></div><p>' + data.title +  '</p>'
+async function displayResults(data) {
+   
+    let card = '<div><div class="image"><img onclick="loadDescription(' + data.id + ',\'' +  data.title + '\',\'' + data.image + '\')" src="' + data.image + '"><button onclick="loadDescription(' + data.id + ',\'' +  data.title + '\',\'' + data.image + '\')">View Recipe</button></div><p>' + data.title + '</p></div>';
     $(".container").append(card);
 }
 
 function ingredient_url(url,input) {
-    console.log("HEY");
     let base_URL = url + "&ingredients=";
 
     //function to convert ingredient input{string} to an array
@@ -113,7 +114,7 @@ function ingredient_url(url,input) {
     let array_URL = base_URL + ingredients_array.join(",+");
 
     let full_URL = array_URL + "&number=10" //might have to change later
-    console.log(full_URL);
+   
     return ingredients_json(full_URL);
 }
 
@@ -121,8 +122,7 @@ function ingredient_url(url,input) {
 function ingredients_json(url){
     return new Promise(resolve => {
         let ids = [];
-        console.log("HEY");
-        console.log(url);
+      
         $.get(url, function(data) {
             for (var i=0; i < data.length; i++) {
                 ids.push(data[i].id);
