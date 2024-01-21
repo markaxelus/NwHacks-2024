@@ -16,14 +16,15 @@
 }
 
 #logo-text{
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bolder;
     color: #043428;
+    font-family: Arial;
 }
 
 #logo{
-    width: 55%;
-    height: 55%;
+    width: 52%;
+    height: 52%;
 }
 
 /*#wrapper {
@@ -31,11 +32,59 @@
     justify-content: space-around;
 }*/
 
-#container{
+.container{
     display:flex;
     flex-flow: row wrap;
+    justify-content: space-between;
+    justify-content: space-around;
+    padding: 30px;
+    gap: 70px;
 }
 
+#recipesText{
+    display:flex;
+    justify-content: center;
+    font-family: Arial;
+}
+
+.image:hover img{
+    opacity: 0.7;
+    outline: 2px solid rgb(255, 153, 0);
+    
+}
+
+.image{
+    position: relative;
+}
+
+.image:hover button {
+    opacity: 1;
+    background: greenyellow;
+    
+}
+.Container button{
+    opacity: 0;
+    border: none;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.container img{
+    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: opacity 0.3s ease;
+}
+
+.Container div p{
+    font-size: 20px;
+    text-align: center;
+    font-family: Arial;
+}
+
+/*
 #EcoSuggestionPicture{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -52,3 +101,4 @@
     opacity: 0.5;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+/*
