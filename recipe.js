@@ -102,7 +102,7 @@ function ingredients_json(url){
         $.get(url, function(data) {
             let ids = [];
             for (var i=0; i < data.length; i++) {
-                ids.push(data[i].id);
+                ids.push(data[i].id); //
 
             }
             
