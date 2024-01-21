@@ -3,6 +3,9 @@
     <title>EcoEats</title>
     <link href="style.css" type="text/css" rel="stylesheet">
     <script src="functions.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+    <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/>
 </head>
 <body>
     <div class="header">
@@ -95,31 +98,27 @@
                 <option value="early-december">Early December</option>
                 <option value="late-december">Late December</option>
             </select>
-            <!--
-            <select name="dietaryRestrictions" id ="diet">
-                <option value="none" selected disabled>Dietary Restrictions</option>
+            
+            <input type="input" placeholder="Input Ingredients" id="ingredients">
+
+            <select data-placeholder="Begin typing a name to diet..." multiple class="chosen-select" id ="diet" >
                 <option value="vegetarian">Vegetarian</option>
                 <option value="vegan">Vegan</option>
                 <option value="glutenFree">Gluten-Free</option>
                 <option value="dairyFree">Dairy-Free</option>
-                <option value="nutFree">Nut-Free</option>
-                <option value="pescatarian">Pescatarian</option>
-                <option value="halal">Halal</option>
-                <option value="kosher">Kosher</option>
-                <option value="lowCarb">Low Carb</option>
-                <option value="lowFat">Low Fat</option>
-                <option value="lowSugar">Low Sugar</option>
-                <option value="organic">Organic</option>
-                <option value="raw">Raw</option>
-                <option value="paleo">Paleo</option>
-                <option value="flexitarian">Flexitarian</option>
-                <option value="whole30">Whole30</option>
-            </select> -->
-
-            <input type="input" placeholder="Input Ingredients" id="ingredients"> 
+                <option value="ketogenic">Ketogenic</option>
+            </select> 
+     
             <button onclick=search() id="search">Search</button>  
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+          $(".chosen-select").chosen({
+            no_results_text: "Oops, nothing found!"
+          });
+        });
+    </script>
     
 </body>
 </html>
