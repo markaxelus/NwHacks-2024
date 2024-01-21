@@ -1,17 +1,14 @@
 const { Builder, By, until } = require("selenium-webdriver");
+let base_URL = "https://www.seasonalfoodguide.org/";
+let state = document.getElementById("state").value;
+let month = document.getElementById("month").value;
+let full_url = base_URL + state + "/" + month;
+var elements = [];
+
 
 async function scraper() {
-// launch the browser
   let driver = await new Builder().forBrowser("chrome").build();
-  //navigate to facebook login page
-  await driver.get("https://www.seasonalfoodguide.org/");
-  // Select input elements and fill them out
-  let elements = await driver.findElements(By.className("card_title"));
-  // Select login button and invoke click action
-  for (let i=0; i<elements.length; i++) {
-    elements[i].getText().then(function (text) {
-      console.log(text);
-   });
-  }
+  await driver.get(full_url);
+  elements = await driver.findElements(By.className("card_title"));
 }
 scraper()
