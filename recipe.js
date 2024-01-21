@@ -17,6 +17,7 @@ function main() {
     let recipe_data = search_recipes(ID_ARRAY,diet_array);
 }
 
+
 //Function that returns the option based on the user input, not ALL DROPDOWNS
 function getSelectedOptions() {
     let selectElements = getElementsById("diet");
@@ -29,16 +30,34 @@ function search_recipes(ids,diet_array) {
     let recipe_base_URL = "https://api.spoonacular.com/recipes/{id_data}/information?includeNutrition=false" //Search Recipes Informations
 
     for (var i = 0; i < ids.length; i++) {
-        recipe_URL = recipe_base_URL.replace("{id_data", id[i]);
+        recipe_URL = recipe_base_URL.replace("{id_data", ids[i]);
         $.get(recipe_URL, function(data) {
-            for (var item in diet_array){
-                if (data.item in data == true) {
+            for (let item of diet_array){
+                if (data[item] === true) {
                     //THEN WE WANT TO DISPLAY THE TITLE AND PRICE AND SUMMARY AND PICTURE\
+                    // MAKE 2 function calls here
+                    priceBreakdownMetrics(data.id);
                 }
             }
         })
     }
 }
+// Function takes in individual ids, NOT AN ARRAY OF IDS ! ! ! !
+function priceBreakdownMetrics(id) {
+    let price_base_URL = "https://api.spoonacular.com/recipes/{id_data}/priceBreakdownWidget.json"
+    let price_URL = price_base_URL.replace("{id_data", id);
+
+    $.get(price_URL, function(data){
+        for (let items of  data.ingredients){
+            let metricUnit = items.amount.metric.unit; //Gets u the metrix UNIT 'g'
+            let valueUnit = items.amount.metric.value; //Gets u the metrix VALUE '1.5'
+            let price = items.price; //Gets u the price
+
+        }
+    })
+        
+}
+
 function ingredient_url(url,input) {
     let base_URL = url + "?ingredients=";
 
