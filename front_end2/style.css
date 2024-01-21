@@ -29,15 +29,17 @@ select{
     border:none;
     text-align: center;
     font-size: 15px;
+    border-radius: 15px;
 }
 
 input{
     height: 40px;
     width: 170px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border:none;
+    border: none;
     text-align: center;
     font-size: 15px;
+    border-radius: 15px;
 }
 
 #search{
@@ -46,9 +48,14 @@ input{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border:none;
     font-size: 15px;
+    border-radius: 15px;
 }
 
 select:hover {
+    outline: 2px orange solid;
+}
+
+input:hover{
     outline: 2px orange solid;
 }
 
