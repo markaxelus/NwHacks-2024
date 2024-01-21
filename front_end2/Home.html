@@ -104,6 +104,7 @@
             <input type="input" placeholder="Input Ingredients" id="ingredients">
 
             <select data-placeholder="Begin typing a name to diet..." multiple class="chosen-select" id ="diet" >
+                <option value="none" selected>None</option>
                 <option value="vegetarian">Vegetarian</option>
                 <option value="vegan">Vegan</option>
                 <option value="glutenFree">Gluten-Free</option>
@@ -125,7 +126,7 @@
     <div class="page2">
         <div id="suggestions">
             <div class="left">
-            Filter: <select name="dropdown" size="1">
+            Filter: <select name="dropdown" size="1", id="category">
                 <option value="all" selected>All</option>
                 <option value="eco">Eco-friendly</option>
                 <option value="general">General Suggestions</option>
