@@ -44,7 +44,8 @@ body {
 }
 
 .description {
-    max-width: 500px; /* Limit the width for better readability */
+    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 600px; /* Limit the width for better readability */
     margin: auto; /* Center the content */
     background: white; /* White background for the main content area */
     padding: 20px;
@@ -93,5 +94,10 @@ table th {
     margin-bottom: 10px; /* Space below the title */
     text-align: center;
 }
+
+.ingredientsTable td {
+    text-align: center;
+}
+
 
 /* Add any additional styling as needed */

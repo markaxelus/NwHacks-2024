@@ -1,5 +1,6 @@
 let ID_ARRAY = [];
-let apikey = "apiKey=0c3a68e53e61402eb2d3396b7e348f2b"
+//let apikey = "apiKey=0c3a68e53e61402eb2d3396b7e348f2b" // Tyler's
+let apikey = "apiKey=b9459cf7d4c94bf8a5d52a594aadfc8f" //Iman's
 
 async function loadCard() {
     let base_URL = "https://api.spoonacular.com/recipes/findByIngredients?" + apikey; //Search Recipes by Ingredients API
@@ -39,7 +40,7 @@ async function loadDescription(id, title, image) {
     $("#EcoSuggestionPicture").attr("src", image);
     $("#recipeTitle").text(title);
     $(".page2").hide();
-    $(".description").show();
+    $(".page3").show();
 }
 
 
@@ -93,8 +94,8 @@ async function priceBreakdownMetrics(id) {
             let metricUnit = items.amount.metric.unit; //Gets u the metrix UNIT 'g'
             let valueUnit = items.amount.metric.value; //Gets u the metrix VALUE '1.5'
             let price = items.price; //Gets u the price
-            let ingredient = "<tr><td>" + name + "</td><td>" + valueUnit + " " + metricUnit + "</td><td>" + price + "</td><tr>"
-            $("#ingredientsTable").append(ingredient);
+            let ingredient = '<tr><td>' + name + "</td><td>" + valueUnit + " " + metricUnit + "</td><td>" + price + "</td><tr>"
+            $(".ingredientsTable").append(ingredient);
         }
     })
         
