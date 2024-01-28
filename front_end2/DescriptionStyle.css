@@ -16,6 +16,7 @@ body {
 }
 #header3 {
     height: 300px;
+    /* min-width: 100vh; */
     background-image: url(healthy.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;

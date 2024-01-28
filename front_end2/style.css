@@ -1,6 +1,5 @@
-.header {
-    
-    height: 800px;
+.page1 {
+    min-height: 100vh;
     background-image: url(healthy.jpg);
     background-repeat: no-repeat;
 	background-size: 120%; 
@@ -13,10 +12,25 @@
     font-size: 37px;
     font-weight: bolder;
 }
+/* .header {
+    
+    min-height: 100vh;
+    background-image: url(healthy.jpg);
+    background-repeat: no-repeat;
+	background-size: 120%; 
+    background-position-y:center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #043428;
+    font-size: 37px;
+    font-weight: bolder;
+} */
 
-.header img {
+/* .header img {
     margin: 0%;
-}
+} */
 /* .header a {
     text-decoration: none;
     color: black;

@@ -140,3 +140,10 @@ function convert_input_string(word) {
     return word.split(",");
 }
 
+// function hideBackground() {
+//     $("body").css("background", "none");
+// }
+
+// function showBackground() {
+//     $("body").css("background", "display");
+// }
